@@ -46,7 +46,6 @@ Parameters:
   OauthToken:
     Type: String
     Description: GitHub Repository URL
-    NoEcho: true
 
 Resources:
 
@@ -137,7 +136,7 @@ Resources:
   GetTodoFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: todo-src/getTodo
+      CodeUri: s3://todo-src/getTodo
       Handler: app.getToDoItem
       Tracing: Active
       Policies:
@@ -164,7 +163,7 @@ Resources:
   GetAllTodoFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: todo-src/getAllTodo
+      CodeUri: s3://todo-src/getAllTodo
       Handler: app.getAllToDoItem
       Tracing: Active
       Policies:
@@ -190,7 +189,7 @@ Resources:
   CompleteTodoFunction:
       Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
       Properties:
-        CodeUri: todo-src/completeTodo/
+        CodeUri: s3://todo-src/completeTodo
         Handler: app.completeToDoItem
         Tracing: Active
         Policies:
@@ -216,7 +215,7 @@ Resources:
   AddTodoFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: todo-src/addTodo/
+      CodeUri: s3://todo-src/addTodo
       Handler: app.addToDoItem
       Tracing: Active
       Policies:
@@ -242,7 +241,7 @@ Resources:
   UpdateTodoFunction:
       Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
       Properties:
-        CodeUri: todo-src/updateTodo/
+        CodeUri: s3://todo-src/updateTodo
         Handler: app.updateToDoItem
         Tracing: Active
         Policies:
@@ -266,7 +265,7 @@ Resources:
   DeleteTodoFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: todo-src/deleteTodo
+      CodeUri: s3://todo-src/deleteTodo
       Handler: app.deleteToDoItem
       Tracing: Active
       Policies:
